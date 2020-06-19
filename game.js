@@ -10,7 +10,7 @@ const totalMoves = canvasSize/snakeBox;
 
 const apple = new Image();
 apple.src = "image/frog.png"
-
+let yesSound = true;
 
 //Declare audio here
 let dead = new Audio();
@@ -101,16 +101,16 @@ function handleKey(ValueMK = ""){
     }else{
         key = ValueMK == "ml"? 37 : ValueMK == "mr"? 39 : ValueMK == "mu"? 38 : 40 ;
     }
-    if (key ==37 && dir!="Right"){
+    if (key ==37 && dir!="Right" && yesSound){
         dir = "Left";
         move.play();
-    }else if(key ==38 && dir!="Down"){
+    }else if(key ==38 && dir!="Down" && yesSound){
         dir = "Up";
         move.play();       
-    }else if(key ==39 && dir!="Left"){
+    }else if(key ==39 && dir!="Left" && yesSound){
         dir = "Right";
         move.play();       
-    }else if(key ==40  && dir!="Up"){
+    }else if(key ==40  && dir!="Up" && yesSound){
         dir = "Down"; 
         move.play();      
     }
@@ -201,9 +201,12 @@ var gm = setInterval(finalrender,120);
 function gameOver(){
     clearInterval(gm);
     dead.play();
+    yesSound = false;
+    contextv.fillStyle ="white";
+    contextv.fillRect(canvasSize/2-300,canvasSize/2-60,canvasSize,100)
     contextv.fillStyle ="black";
     contextv.font = "60px";
-    contextv.fillText("Game Over | Score : "+score ,canvasSize/2-200,canvasSize/2);
+    contextv.fillText("Game Over | Score : "+score ,canvasSize/2-210,canvasSize/2);
     document.getElementById("relo").style.visibility="visible";
     
 }
