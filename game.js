@@ -10,13 +10,18 @@ const totalMoves = canvasSize/snakeBox;
 
 const apple = new Image();
 apple.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/757px-Apple_logo_black.svg.png"
-//apple.width =20;
-//apple.height=20;
+
 
 //Declare audio here
+let dead = new Audio();
+let eat = new Audio();
+let move = new Audio();
+let login = new Audio();
 
-//
-
+dead.src="audio/dead.mp3";
+eat.src="audio/eat.mp3";
+move.src="audio/move.mp3";
+login.src="audio/login.mp3";
 
 //define snake
 
@@ -98,12 +103,16 @@ function handleKey(ValueMK = ""){
     }
     if (key ==37 && dir!="Right"){
         dir = "Left";
+        move.play();
     }else if(key ==38 && dir!="Down"){
-        dir = "Up";       
+        dir = "Up";
+        move.play();       
     }else if(key ==39 && dir!="Left"){
-        dir = "Right";       
+        dir = "Right";
+        move.play();       
     }else if(key ==40  && dir!="Up"){
-        dir = "Down";       
+        dir = "Down"; 
+        move.play();      
     }
 
 }
@@ -162,6 +171,7 @@ function finalrender(){
     if(snakeX == food.x && snakeY==food.y){
         score++;
         getFood();
+        eat.play();
     }else{
         snake.pop();
     }
@@ -190,6 +200,7 @@ var gm = setInterval(finalrender,120);
 
 function gameOver(){
     clearInterval(gm);
+    dead.play();
     contextv.fillStyle ="black";
     contextv.font = "60px";
     contextv.fillText("Game Over | Score : "+score ,canvasSize/2-200,canvasSize/2);
