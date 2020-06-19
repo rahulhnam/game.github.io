@@ -9,7 +9,7 @@ const snakeBox = 20;
 const totalMoves = canvasSize/snakeBox;
 
 const apple = new Image();
-apple.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/757px-Apple_logo_black.svg.png"
+apple.src = "image/frog.png"
 
 
 //Declare audio here
