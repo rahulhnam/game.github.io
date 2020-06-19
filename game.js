@@ -111,8 +111,18 @@ function handleKey(ValueMK = ""){
 function getFood(){
  food ={
      x: Math.floor(Math.random()*(totalMoves-2-3)+ 3)*snakeBox,
-     y: Math.floor(Math.random()*(totalMoves-2-3)+ 3)*snakeBox
+     y: Math.floor(Math.random()*(totalMoves-2-3)+ 3)*snakeBox  
  }
+    checkfood(snake,food);
+}
+
+function checkfood(sna,foop){
+    for(var i =0; i<sna.length; ++i){
+        if(sna[i].x == foop.x && sna[i].y == foop.y){
+            getFood();
+        }
+    }
+     return;
 }
 
 function collit(head, sar){
