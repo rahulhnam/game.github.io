@@ -19,7 +19,10 @@
         visibility: hidden;
     }
     #alio{
+        align-self: center;
         text-align: center;
+        width: fit-content;
+        height: fit-content;
     }
     .body,
     .wrapper {
@@ -47,14 +50,22 @@
     /* Making the wrapper stack above the body */
     z-index: 2;
     }
+    .gemmboo{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 </style>
 <body class = "body wrapper">
     <div id = "alio">
-    <div>Snake Game 3.1</div> 
-    <canvas class = "container-fluid container-xl" id="canvas"></canvas><br>
-    <input id = "relo" type="button" value="Restart" onClick="window.location.reload();"><br>
-    <div>Swipe Left/Right/Up/Down to move the snake<br> and eat the Apple..!!</div><br>
-    <div style="color: red;">*Better Performance in Chrome-Browser</div>
+        <div>Snake Game 3.1</div> 
+        <canvas class = "gemmboo" id="canvas"></canvas><br>
+        <input id = "relo" type="button" value="Restart" onClick="window.location.reload();">
+        <input style="float: right;;" id = "mut" type="button" value="🔇" onClick= "mute()">
+        <div>Swipe Left/Right/Up/Down to move the snake<br> and eat the Apple..!!</div><br>
+        <div style="color: red;">*Better Performance in Chrome-Browser</div>
     </div>
     <script src="game.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
