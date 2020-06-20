@@ -214,17 +214,17 @@ function gameOver(){
 
 function mute(){
     if(document.getElementById("mut").value == "🔇"){
-        dead.src="";
-        eat.src="";
-        move.src="";
-        login.src="";
-        document.getElementById("mut").value = "🔊";
-    }
-    else{
         dead.src="audio/dead.mp3";
         eat.src="audio/eat.mp3";
         move.src="audio/move.mp3";
         login.src="audio/login.mp3";
+        document.getElementById("mut").value = "🔊";
+    }
+    else{
+        dead.src="";
+        eat.src="";
+        move.src="";
+        login.src="";
         document.getElementById("mut").value = "🔇";
     }
 }
