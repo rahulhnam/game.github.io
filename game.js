@@ -19,10 +19,10 @@ let eat = new Audio();
 let move = new Audio();
 let login = new Audio();
 
-dead.src="audio/dead.mp3";
-eat.src="audio/eat.mp3";
-move.src="audio/move.mp3";
-login.src="audio/login.mp3";
+dead.src="";
+eat.src="";
+move.src="";
+login.src="";
 
 //define snake
 
