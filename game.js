@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById("canvas");
 const contextv = canvas.getContext("2d");
 const canvasSize = 600;
@@ -146,7 +147,7 @@ function collit(head, sar){
 
 
 function finalrender(){
-    contextv.fillStyle = "#dcdcdc";
+     contextv.fillStyle = "#dcdcdc";
     contextv.fillRect(0,0,canvasSize,canvasSize);
 
     for(let i=0; i<snake.length;i++){
