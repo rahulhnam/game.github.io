@@ -7,7 +7,7 @@ if(highscore == null){
 document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb;
 }
 else{
-    document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb + " | Max Score :" + highscore;
+    document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb + " | Max Score : " + highscore;
 }
 var soundlast = window.localStorage.getItem('sound');
 const canvas = document.getElementById("canvas");
