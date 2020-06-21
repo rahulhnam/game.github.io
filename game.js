@@ -25,10 +25,10 @@ if(soundlast == "🔊" || soundlast =="🔇"){
         move.src="audio/move.mp3";
         login.src="audio/login.mp3";
     }else{
-        dead.src="";
-        eat.src="";
-        move.src="";
-        login.src="";
+        dead.src="audio/noaudio.mp3";
+        eat.src="audio/noaudio.mp3";
+        move.src="audio/noaudio.mp3";
+        login.src="audio/noaudio.mp3";
     }
     document.getElementById("mut").value = soundlast;
 }else{  
