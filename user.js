@@ -19,7 +19,7 @@ function usercheck(){
 }
 
 function resetdata(){
-    localStorage.removeItem("user");
-    localStorage.removeItem("hsc");
+    window.localStorage.removeItem("user");
+    window.localStorage.removeItem("hsc");
     window.location.reload();
 }
