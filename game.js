@@ -1,4 +1,4 @@
-
+var soundlast = window.localStorage.getItem('sound');
 const canvas = document.getElementById("canvas");
 const contextv = canvas.getContext("2d");
 const canvasSize = 600;
@@ -18,12 +18,23 @@ let dead = new Audio();
 let eat = new Audio();
 let move = new Audio();
 let login = new Audio();
-
-dead.src="";
-eat.src="";
-move.src="";
-login.src="";
-
+if(soundlast == "🔊" || soundlast =="🔇"){
+    if(soundlast == "🔊"){
+        dead.src="audio/dead.mp3";
+        eat.src="audio/eat.mp3";
+        move.src="audio/move.mp3";
+        login.src="audio/login.mp3";
+    }else{
+        dead.src="";
+        eat.src="";
+        move.src="";
+        login.src="";
+    }
+    document.getElementById("mut").value = soundlast;
+}else{  
+    window.localStorage.setItem('sound', document.getElementById("mut").value);
+    soundlast = window.localStorage.getItem('sound');
+}
 //define snake
 
 let snake =[];
@@ -213,12 +224,14 @@ function gameOver(){
 }
 
 function mute(){
-    if(document.getElementById("mut").value == "🔇"){
+    if(soundlast == "🔇"){
         dead.src="audio/dead.mp3";
         eat.src="audio/eat.mp3";
         move.src="audio/move.mp3";
         login.src="audio/login.mp3";
         document.getElementById("mut").value = "🔊";
+        soundlast = "🔊";
+        window.localStorage.setItem('sound', document.getElementById("mut").value);
     }
     else{
         dead.src="";
@@ -226,5 +239,7 @@ function mute(){
         move.src="";
         login.src="";
         document.getElementById("mut").value = "🔇";
+        soundlast = "🔇";
+        window.localStorage.setItem('sound', document.getElementById("mut").value);
     }
 }
