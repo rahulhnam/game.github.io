@@ -71,15 +71,16 @@
         <div id = "headuser"></div> 
         <canvas class = "gemmboo" id="canvas"></canvas><br>
         <input id = "relo" type="button" value="Restart" onClick="window.location.reload();">
-        <input style="float: right;margin-right: 20px;" id = "mut" type="button" value="🔇" onClick= "mute()">
+        <input style="float: right;margin-right: 10px;" id = "mut" type="button" value="🔇" onClick= "mute()">
         <div>Swipe Left/Right/Up/Down to move the snake<br> and eat the Apple..!!</div>
-        <input style="float: right;margin-right: 20px;" type="button" value="Reset-User" onClick= "resetdata()">
+        <input class="btn btn-danger" style="float: right;margin-right: 20px;" type="button" value="Reset" onClick= "resetdata()">
         <div style="color: red;">*Better Performance in Chrome-Browser</div>
     </div>
     <div id = "usern">
+        <p>Welcome to Snake Game 4.0..!!</p>
         <p>Enter your Name :</p>
         <input id = "username" type="text">
-        <input type="button" value="Submit" onClick= "usercheck()">
+        <input type="button" value="Play" onClick= "usercheck()">
     </div>
     <script src="user.js"></script>
     <script src = "game.js"></script>

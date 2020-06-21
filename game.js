@@ -3,11 +3,11 @@ var highscore = window.localStorage.getItem('hsc');
 if(usernb == null) 
 {}
 else{
-if(highscore == null){
-document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb;
+if(highscore == null || highscore == 0){
+    document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb;
 }
 else{
-    document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb + " | Max Score : " + highscore;
+    document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb + " | Highest Score  : " + highscore;
 }
 var soundlast = window.localStorage.getItem('sound');
 const canvas = document.getElementById("canvas");
@@ -229,7 +229,7 @@ function gameOver(){
     contextv.fillRect(canvasSize/2-300,canvasSize/2-60,canvasSize,100)
     contextv.fillStyle ="black";
     contextv.font = "60px";
-    contextv.fillText("Game Over | Score : "+score ,canvasSize/2-210,canvasSize/2);
+    contextv.fillText("Game Over | Score : "+score ,canvasSize/2-200,canvasSize/2);
     document.getElementById("relo").style.visibility="visible";
     if(highscore == null){
         window.localStorage.setItem('hsc', score);
