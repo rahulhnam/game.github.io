@@ -1,3 +1,14 @@
+var usernb = window.localStorage.getItem('user');
+var highscore = window.localStorage.getItem('hsc');
+if(usernb == null) 
+{}
+else{
+if(highscore == null){
+document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb;
+}
+else{
+    document.getElementById("headuser").innerHTML = "Snake Game 4.0 -- Hi "+ usernb + " | Max Score :" + highscore;
+}
 var soundlast = window.localStorage.getItem('sound');
 const canvas = document.getElementById("canvas");
 const contextv = canvas.getContext("2d");
@@ -220,7 +231,14 @@ function gameOver(){
     contextv.font = "60px";
     contextv.fillText("Game Over | Score : "+score ,canvasSize/2-210,canvasSize/2);
     document.getElementById("relo").style.visibility="visible";
-    
+    if(highscore == null){
+        window.localStorage.setItem('hsc', score);
+    }else{
+        if(highscore < score){
+            window.localStorage.setItem('hsc', score);
+        }
+
+    }
 }
 
 function mute(){
@@ -242,4 +260,5 @@ function mute(){
         soundlast = "🔇";
         window.localStorage.setItem('sound', document.getElementById("mut").value);
     }
+}
 }

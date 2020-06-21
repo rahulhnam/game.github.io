@@ -24,6 +24,11 @@
         text-align: center;
         width: fit-content;
         height: fit-content;
+        visibility: hidden;
+    }
+    #usern{
+        text-align: center;
+        margin-top: -233px;
     }
     .body,
     .wrapper {
@@ -63,14 +68,20 @@
 </style>
 <body class = "body wrapper">
     <div id = "alio">
-        <div>Snake Game 3.1</div> 
+        <div id = "headuser"></div> 
         <canvas class = "gemmboo" id="canvas"></canvas><br>
         <input id = "relo" type="button" value="Restart" onClick="window.location.reload();">
         <input style="float: right;margin-right: 20px;" id = "mut" type="button" value="🔇" onClick= "mute()">
         <div>Swipe Left/Right/Up/Down to move the snake<br> and eat the Apple..!!</div>
         <div style="color: red;">*Better Performance in Chrome-Browser</div>
     </div>
-    <script src="game.js"></script>
+    <div id = "usern">
+        <p>Enter your Name :</p>
+        <input id = "username" type="text">
+        <input type="button" value="Submit" onClick= "usercheck()">
+    </div>
+    <script src="user.js"></script>
+    <script src = "game.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
