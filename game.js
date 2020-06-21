@@ -239,6 +239,7 @@ function gameOver(){
         }
 
     }
+    writeUserData(usernb,score);
 }
 
 function mute(){
@@ -261,4 +262,10 @@ function mute(){
         window.localStorage.setItem('sound', document.getElementById("mut").value);
     }
 }
+function writeUserData(usernbd, scored) {
+    firebase.database().ref().child(usernbd).set({
+      score : scored
+    });
+  }
+
 }
