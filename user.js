@@ -9,7 +9,7 @@ if(usernb == null){
 
 function usercheck(){
     //alert(usernb);
-    if(document.getElementById("username").value == null){
+    if(document.getElementById("username").value == ""){
 
     }else{
         window.localStorage.setItem('user', document.getElementById("username").value);
