@@ -233,9 +233,11 @@ function gameOver(){
     document.getElementById("relo").style.visibility="visible";
     if(highscore == null){
         window.localStorage.setItem('hsc', score);
+        highscore = window.localStorage.getItem('hsc');
     }else{
         if(highscore < score){
             window.localStorage.setItem('hsc', score);
+            highscore = window.localStorage.getItem('hsc');
         }
 
     }
