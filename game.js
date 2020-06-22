@@ -263,9 +263,7 @@ function mute(){
     }
 }
 function writeUserData(usernbd, scored) {
-    firebase.database().ref().child(usernbd).set({
-      score : scored
-    });
+    firebase.database().ref().child(usernbd).set(scored);
   }
 
 }
