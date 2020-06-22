@@ -239,7 +239,7 @@ function gameOver(){
         }
 
     }
-    writeUserData(usernb,score);
+    writeUserData(usernb,highscore);
 }
 
 function mute(){
